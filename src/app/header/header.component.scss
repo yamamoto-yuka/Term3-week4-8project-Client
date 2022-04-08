@@ -1,0 +1,85 @@
+header {
+  background-color: #b1a196;
+}
+nav {
+  padding-top: 10px;
+}
+.header__wrapper {
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.heder__brand {
+  height: 80px;
+  padding: 0;
+  z-index: 100;
+}
+.header__logo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+.header__bar {
+  padding: 30px;
+  font-size: 20px;
+  color: #262626;
+}
+.header__bloc {
+  padding: 30px;
+  justify-content: flex-end;
+}
+.header__search,
+.header__bag {
+  font-size: 20px;
+  color: #262626;
+}
+.header__bag {
+  padding-left: 15px;
+}
+
+.header__herobloc {
+  height: 100vh;
+}
+.header__herobloc img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.header__headlines {
+  padding-bottom: 100px;
+  color: black;
+}
+.header__headlines h2 {
+  padding-bottom: 25px;
+  font-size: 15px;
+}
+.header__headlines button {
+  padding: 10px 20px;
+}
+.btn-light {
+  color: #262626;
+  background-color: transparent !important;
+  border-color: #262626;
+}
+.btn-light:hover {
+  color: white;
+  background-color: #262626 !important;
+  border-color: #262626;
+}
+@media (min-width: 1000px) {
+  .header__bar,
+  .header__bloc {
+    padding: 30px 50px;
+    font-size: 26px;
+  }
+  .header__search,
+  .header__bag {
+    font-size: 26px;
+  }
+  .header__headlines {
+    padding-bottom: 50px;
+  }
+}
