@@ -1,50 +1,69 @@
 <header>
-  <nav>
-    <div class="header__wrapper row">
-      <div class="heder__menu col-3">
-        <a href="#"><i class="fas fa-bars header__bar"></i></a>
-      </div>
-      <div class="heder__brand col-6">
-        <a href="#"><img src="../../assets/Aron-logo.png" class="header__logo" alt="The logo of the ARON"></a>
-      </div>
-      <div class="header__bloc col-3 d-flex">
-        <a href="#"><i class="fas fa-search header__search"></i></a>
-        <a href="#"><i class="fas fa-shopping-bag header__bag"></i></a>
-      </div>
+  <div class="header-ads top"></div>
+  <div class="header-ads bottom"></div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="heder__brand">
+      <a href="#"
+        ><img
+          src="../../assets/logo.png"
+          class="header__logo"
+          alt="The logo of the ARON"
+      /></a>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            RECORDS GENRES
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">JAZZ</a>
+            <a class="dropdown-item" href="#">SOUL</a>
+            <a class="dropdown-item" href="#">WORLD</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="apparel">APPAREL</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 d-flex">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
     </div>
   </nav>
-  <div id="heroCarousel" class="carousel slide header__backdrop" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active header__herobloc">
-        <img src="../../assets/Leather-Craft-TravelBag.png" class="d-block w-100" alt="Travel Leather Case">
-        <div class="carousel-caption  header__headlines">
-          <h1>Travel Leather Case</h1>
-          <h2>Travel with us. All of the ARON products are handmade.</h2>
-          <a href="#"><button class="btn btn-light">SHOP</button></a>
-        </div>
-      </div>
-      <div class="carousel-item header__herobloc">
-        <img src="../../assets/Leather-Craft-Travel-ToteBag.png" class="d-block w-100" alt="Leather Tote Bag">
-        <div class="carousel-caption  header__headlines">
-          <h1>Leather Tote</h1>
-          <h2>We have leather bags for every purpose.</h2>
-          <a href="#"><button class="btn btn-light">DISCOVER</button></a>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
+  <div class="header-heroimg">
+    <img src="../../assets/shopimage.png" alt="TRUNK RECORD" />
   </div>
 </header>
