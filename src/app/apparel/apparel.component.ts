@@ -16,8 +16,8 @@ export class ApparelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAllapparelDataFromNodesercer().subscribe((apparelData) => {
-      this.items = apparelData;
+    this.service.getAllproductDataFromNodesercer().subscribe((productData) => {
+      this.items = productData;
     });
   }
 }

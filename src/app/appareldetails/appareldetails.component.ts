@@ -23,8 +23,8 @@ export class AppareldetailsComponent implements OnInit {
   ngOnInit(): void {
     // console.log(this.param.snapshot.paramMap.get('id'));
     let id: any = this.param.snapshot.paramMap.get('id');
-    this.service.getapparelDetailFromNodeserver(id).subscribe((apparelData) => {
-      this.item = apparelData;
+    this.service.getproductDetailFromNodeserver(id).subscribe((productData) => {
+      this.item = productData;
     });
   }
 }

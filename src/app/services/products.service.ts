@@ -9,11 +9,11 @@ export class ProductsService {
   private productlUrl = 'http://localhost:4500/productapi';
   constructor(private http: HttpClient) {}
 
-  getAllapparelDataFromNodesercer() {
+  getAllproductDataFromNodesercer() {
     return this.http.get<Item[]>(this.productlUrl);
   }
 
-  getapparelDetailFromNodeserver(id: number) {
+  getproductDetailFromNodeserver(id: number) {
     return this.http.get<Item>(this.productlUrl + '/' + id);
   }
 }
