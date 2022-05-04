@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Item } from '../interfaces/apparel.interface';
+import { Item } from '../interfaces/product.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  private apparelUrl = 'http://localhost:4500/apparel';
+  private productlUrl = 'http://localhost:4500/productapi';
   constructor(private http: HttpClient) {}
 
   getAllapparelDataFromNodesercer() {
-    return this.http.get<Item[]>(this.apparelUrl);
+    return this.http.get<Item[]>(this.productlUrl);
   }
 
   getapparelDetailFromNodeserver(id: number) {
-    return this.http.get<Item>(this.apparelUrl + '/' + id);
+    return this.http.get<Item>(this.productlUrl + '/' + id);
   }
 }

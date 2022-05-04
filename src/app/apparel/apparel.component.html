@@ -7,17 +7,21 @@
         class="mt-5 col-sm-12 col-md-4 col-lg-4"
       >
         <div class="apparel-item">
-          <img [src]="item.prd_image1" [alt]="item.prd_title" />
-          <img [src]="item.prd_image2" [alt]="item.prd_title" />
+          <img [src]="item.product_image1" [alt]="item.product_name" />
+          <img [src]="item.product_image2" [alt]="item.product_name" />
         </div>
         <h2 class="mt-3 apparel-item-title">
-          {{ item.prd_title | titlecase }}
+          {{ item.product_name | titlecase }}
         </h2>
-        <p>{{ item.prd_description }}</p>
-        <p class="apparel-item-price">{{ item.prt_price | currency: "CAD" }}</p>
-        <availability [inStock]="item.prt_availability"></availability>
+        <p>{{ item.product_desc }}</p>
+        <p class="apparel-item-price">
+          {{ item.product_price | currency: "CAD" }}
+        </p>
+        <availability
+          [inStock]="changeboolean(item.product_availability)"
+        ></availability>
         <button
-          [routerLink]="['/apparel/', item.id]"
+          [routerLink]="['/apparel/', item.ProductID]"
           routerLinkActive="router-link-active"
           class="mt-3 apparel-btn"
         >

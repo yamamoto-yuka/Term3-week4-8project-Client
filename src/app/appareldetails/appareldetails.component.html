@@ -1,24 +1,28 @@
 <main class="container">
   <section class="container">
-    <div *ngIf="item.id" class="mt-5">
+    <div *ngIf="item.ProductID" class="mt-5">
       <p class="mt-5">
         <a routerLink="../../apparel"> APPAREL</a> >
-        {{ item.prd_title | uppercase }}
+        {{ item.product_name | uppercase }}
       </p>
       <div class="row">
         <div class="apparel-item col-sm-12 col-md-6">
-          <img [src]="item.prd_image1" [alt]="item.prd_title" />
+          <img [src]="item.product_image1" [alt]="item.product_name" />
         </div>
         <div class="apparel-item col-sm-12 col-md-6">
-          <img [src]="item.prd_image2" [alt]="item.prd_title" />
+          <img [src]="item.product_image2" [alt]="item.product_name" />
         </div>
       </div>
       <h2 class="mt-3 apparel-item-title">
-        {{ item.prd_title | titlecase }}
+        {{ item.product_name | titlecase }}
       </h2>
-      <p>{{ item.prd_description }}</p>
-      <p class="apparel-item-price">{{ item.prt_price | currency: "CAD" }}</p>
-      <availability [inStock]="item.prt_availability"></availability>
+      <p>{{ item.product_desc }}</p>
+      <p class="apparel-item-price">
+        {{ item.product_price | currency: "CAD" }}
+      </p>
+      <availability
+        [inStock]="changeboolean(item.product_availability)"
+      ></availability>
       <button class="mt-3 apparel-btn">Add to Cart</button>
     </div>
   </section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Item } from '../interfaces/apparel.interface';
+import { Item } from '../interfaces/product.interface';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -14,6 +14,11 @@ export class AppareldetailsComponent implements OnInit {
     private param: ActivatedRoute,
     private service: ProductsService
   ) {}
+
+  changeboolean(data: any) {
+    if (data === 0) return true;
+    else return false;
+  }
 
   ngOnInit(): void {
     // console.log(this.param.snapshot.paramMap.get('id'));
