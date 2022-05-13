@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Signup } from '../interfaces/signup';
 import { Login } from '../interfaces/login';
 import { Newproduct } from '../interfaces/newproduct';
- import { Getproductid } from '../interfaces/getproductid';
+import { Getproductid } from '../interfaces/getproductid';
 import { Update } from '../interfaces/update';
 import { Deletedata } from '../interfaces/deletedata';
 import { Updatedisplay } from '../interfaces/updatedisplay';
@@ -19,6 +19,7 @@ export class CommonService {
   private updateURL = 'http://localhost:4500/update'
   private updatedisplayURL = 'http://localhost:4500/updatedisplay'
   private deleteURL = 'http://localhost:4500/deleteproduct'
+  
   constructor(private http: HttpClient) { }
 
   signupService(user_name: string, password: string) {

@@ -13,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ManageProductComponent implements OnInit {
   products: Item[] = [];
-  constructor(private ps: ProductsService, private cs: CommonService, private router:Router, private activerouter:ActivatedRoute) { }
   product_name: string = '';
   product_desc: string = '';
   product_price: any = '';
@@ -23,34 +22,13 @@ export class ManageProductComponent implements OnInit {
   showMessage = 'none';
   addproductStatus = false;
   errorMessage: any = '';
-  iaChecked = false;
-  
 
-  updatedisplay(id:number) {
-
-  }
-
-  // checked(id:number) {
-  //     if(this.isChecked === false) {
-  //       return 'none';
-  //     } else {
-  //       return 'block';
-  //     }
-  // }
-
-
-  // display(id:number) {
-  //   this.cs.updateDisplay(id, ).subscribe((displayData) => {
-  //     console.log(displayData);
-  //   })
-
-  // }
+  constructor(private ps: ProductsService, private cs: CommonService, private router:Router, private activerouter:ActivatedRoute) { }
 
   availavility(data: any) {
     if (data > 0) return true;
     else return false;
   }
-
 
   addproduct() {
     this.cs.addNewProduct(this.product_name, this.product_desc, this.product_price, this.product_image1, this.product_image2, this.product_availability).subscribe((newproductDate) => {   
@@ -61,7 +39,6 @@ export class ManageProductComponent implements OnInit {
         this.router.navigate(['/admin']);
     })
   }
-
  
   ngOnInit(): void {
     this.ps.getAllproductDataFromNodesercer().subscribe((productsDate) => {

@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/admin']);
         console.log(loginData.data[0].adminID)
         localStorage.setItem('adminID', JSON.stringify(loginData.data[0].adminID))
-
       }
     })
   }

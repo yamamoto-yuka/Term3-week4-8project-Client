@@ -14,17 +14,13 @@ export class UpdateComponent implements OnInit {
   product_image1: string = '';
   product_image2: string = '';
   product_availability: any = '';
-  display: string = '';
+  display:any = '';
   updateStatus = false;
   showMessage = 'none';
   errorMessage: any = '';
 
 
  constructor(private param: ActivatedRoute, private cs: CommonService, private router:Router) { }
-  
-
-  
-
   
   update() {
     let id: any = this.param.snapshot.paramMap.get('id');
@@ -67,8 +63,8 @@ export class UpdateComponent implements OnInit {
       } else {
         productDetail.productData[0].display = false;
       }
-      console.log(productDetail.productData[0].display);
       this.display = productDetail.productData[0].display;
+       console.log(productDetail.productData[0].display);
     })
   }
 
