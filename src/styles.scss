@@ -1,9 +1,19 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
 }
+
 .wrap {
-  height: 100vh;
+    height: 100vh;
+}
+
+.showMessage {
+    font-weight: bold;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
 }

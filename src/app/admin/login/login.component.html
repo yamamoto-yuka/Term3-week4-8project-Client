@@ -1,0 +1,22 @@
+<div class="container p-4">
+    <h1>Admin Pannel</h1>
+    <h2>Log In</h2>
+    <div class="mb-3">
+        <label for="username" class="form-label">User Name</label>
+        <input [(ngModel)]="user_name" type="text" class="form-control" id="username" placeholder="User name here">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+            <label class="form-check-label" for="dropdownCheck2">
+        Remember me
+      </label>
+        </div>
+    </div>
+    <button (click)="login()" class="btn btn-primary">LogIn</button> | <a routerLink="/signup">Sign up</a>
+    <div *ngIf="!loingStatus" [style.display]="showMessage" [class.error]="!loingStatus">Your login credentials are incorect. </div>
+</div>

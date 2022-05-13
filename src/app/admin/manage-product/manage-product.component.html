@@ -1,0 +1,80 @@
+<div class="container mt-5 pb-5">
+    <p><a routerLink="/login">Log out</a></p>
+    <h1>Admin Pannel</h1>
+    <h2>Product list</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Update</th>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image1</th>
+                    <th scope="col">Image2</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Display</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>
+                        <a [routerLink]="['/update/', product.ProductID]"><i class="fa-solid fa-pen"></i></a>
+                    </td>
+                    <th scope="row">{{product.ProductID}}</th>
+                    <td>{{product.product_name}}</td>
+                    <td>{{product.product_desc}}</td>
+                    <td>{{product.product_price}}
+                    </td>
+                    <td>
+                        <div class="imgbox" style="background-image:url({{product.product_image1}});"></div>
+                    </td>
+                    <td>
+                        <div class="imgbox" style="background-image:url({{product.product_image2}});"></div>
+                    </td>
+                    <td>
+                        {{product.product_availability}}
+                    </td>
+                    <td>
+                        {{product.display}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="mt-5">Add New Product</h2>
+    <div class="mb-3">
+        <label for="product_name" class="form-label">Product Name</label>
+        <input [(ngModel)]="product_name" type="text" class="form-control" id="product_name" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="product_desc" class="form-label">Product Description</label>
+        <input [(ngModel)]="product_desc" type="text" class="form-control" id="product_desc">
+    </div>
+    <div class="mb-3">
+        <label for="product_price" class="form-label">Product Price</label>
+        <input [(ngModel)]="product_price" type="number" class="form-control" id="product_price">
+    </div>
+    <div class="mb-3">
+        <label for="product_image1" class="form-label">Image1</label>
+        <input [(ngModel)]="product_image1" type="text" class="form-control" id="product_image1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="product_image2" class="form-label">Image2</label>
+        <input [(ngModel)]="product_image2" type="text" class="form-control" id="product_image2">
+    </div>
+    <div class="mb-3">
+        <label for="product_availability" class="form-label">Product Availability(quantity)</label>
+        <input [(ngModel)]="product_availability" type="number" class="form-control" id="product_availability">
+    </div>
+
+    <button (click)="addproduct()" class="btn btn-primary">Add</button>
+    <div *ngIf="addproductStatus" [style.display]="showMessage" [class.success]="addproductStatus">Add new product successful!
+    </div>
+    <div *ngIf="!addproductStatus" [style.display]="showMessage" [class.error]="!addproductStatus">Sorry, Something went wrong. Server responded with {{errorMessage.sqlMessage}}
+    </div>
+
+
+</div>

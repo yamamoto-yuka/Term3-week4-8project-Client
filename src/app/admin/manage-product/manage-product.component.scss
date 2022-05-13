@@ -1,0 +1,13 @@
+th,
+td {
+    /*use this property to disbale soft wrap*/
+    white-space: nowrap;
+}
+
+.imgbox {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}

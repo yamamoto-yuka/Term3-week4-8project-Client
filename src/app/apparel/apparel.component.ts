@@ -10,9 +10,14 @@ export class ApparelComponent implements OnInit {
   items: Item[] = [];
   constructor(private service: ProductsService) {}
 
-  changeboolean(data: any) {
-    if (data === 0) return true;
+  availavility(data: any) {
+    if (data > 0) return true;
     else return false;
+  }
+
+  changeBoolean(data: any) {
+    if (data === 1)  return true;
+    else  return false;
   }
 
   ngOnInit(): void {
