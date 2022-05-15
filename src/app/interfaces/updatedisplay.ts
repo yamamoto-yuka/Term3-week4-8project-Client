@@ -1,4 +1,4 @@
 export interface Updatedisplay {
-  updatedisplay: boolean;
+  display: boolean;
   message: string;
 }

@@ -17,7 +17,7 @@ export class CommonService {
   private addproductURL = 'http://localhost:4500/addnewproduct'
   private productURL = 'http://localhost:4500/product'
   private updateURL = 'http://localhost:4500/update'
-  private updatedisplayURL = 'http://localhost:4500/updatedisplay'
+  private updatedisplayURL = 'http://localhost:4500/toggledisplay'
   private deleteURL = 'http://localhost:4500/deleteproduct'
   
   constructor(private http: HttpClient) { }
@@ -68,10 +68,9 @@ export class CommonService {
     return this.http.put<Update>(this.updateURL, updatebody);
   }
 
-  updateDisplay(ProductID: number, display: string) {
+  updateDisplay(ProductID: number) {
     let updatedisplaybody = {
       ProductID: ProductID,
-      display:display
     }
     return this.http.put<Updatedisplay>(this.updatedisplayURL, updatedisplaybody)
   }

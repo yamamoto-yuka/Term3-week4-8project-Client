@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { Item } from '../../interfaces/product.interface';
 import { CommonService } from 'src/app/services/common.service';
-import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -22,8 +21,10 @@ export class ManageProductComponent implements OnInit {
   showMessage = 'none';
   addproductStatus = false;
   errorMessage: any = '';
+  display = false;
 
-  constructor(private ps: ProductsService, private cs: CommonService, private router:Router, private activerouter:ActivatedRoute) { }
+
+  constructor(private ps: ProductsService, private cs: CommonService, private activerouter:ActivatedRoute) { }
 
   availavility(data: any) {
     if (data > 0) return true;
@@ -36,14 +37,32 @@ export class ManageProductComponent implements OnInit {
         this.showMessage = 'block';
         this.addproductStatus = newproductDate.insert;
         this.errorMessage = newproductDate.message;
-        this.router.navigate(['/admin']);
+        this.ngOnInit();
     })
   }
+
+  //   toggledisplay(index: number) {
+  //   this.cs.updateDisplay().subscribe((displayData) => {
+  //     console.log(displayData);
+  //   })
+  // }
  
   ngOnInit(): void {
     this.ps.getAllproductDataFromNodesercer().subscribe((productsDate) => {
       this.products = productsDate;
+      console.log(productsDate);
+
+      for (let i = 0; i < productsDate.length; i++)
+      {
+        console.log(productsDate[i].display);
+        if (productsDate[i].display === 1) {
+          this.display = true;
+        } else {
+          this.display = false;
+        }
+        }
     })
+
   }
 
 }
