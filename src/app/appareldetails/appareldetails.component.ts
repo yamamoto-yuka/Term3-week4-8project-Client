@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Item } from '../interfaces/product.interface';
-import { ProductsService } from '../services/products.service';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'appareldetails',
@@ -9,10 +8,11 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./appareldetails.component.scss'],
 })
 export class AppareldetailsComponent implements OnInit {
-  item: Item;
+  product: any;
+
   constructor(
     private param: ActivatedRoute,
-    private service: ProductsService
+    private service: CommonService
   ) {}
 
   changeboolean(data: any) {
@@ -21,10 +21,10 @@ export class AppareldetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.param.snapshot.paramMap.get('id'));
     let id: any = this.param.snapshot.paramMap.get('id');
-    this.service.getproductDetailFromNodeserver(id).subscribe((productData) => {
-      this.item = productData;
+    this.service.getproductByID(id).subscribe((product) => {
+      this.product = product.productData[0];
+      console.log(this.product);
     });
   }
 }

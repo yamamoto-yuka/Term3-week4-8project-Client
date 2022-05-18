@@ -3,20 +3,20 @@
     <section class="container">
         <h3 class="mt-5 text-center apparel-headeing">APPAREL</h3>
         <div class="row">
-            <div *ngFor="let item of items; let i = index" class="mt-5 col-sm-12 col-md-4 col-lg-4" [class.nonedisplay]="!item.display">
+            <div *ngFor="let product of products; let i = index" class="mt-5 col-sm-12 col-md-4 col-lg-4" [class.nonedisplay]="!product.display">
                 <div class="apparel-item">
-                    <img [src]="item.product_image1" [alt]="item.product_name" />
-                    <img [src]="item.product_image2" [alt]="item.product_name" />
+                    <img [src]="product.product_image1" [alt]="product.product_name" />
+                    <img [src]="product.product_image2" [alt]="product.product_name" />
                 </div>
                 <h2 class="mt-3 apparel-item-title">
-                    {{ item.product_name | titlecase }}
+                    {{ product.product_name | titlecase }}
                 </h2>
-                <p>{{ item.product_desc }}</p>
+                <p>{{ product.product_desc }}</p>
                 <p class="apparel-item-price">
-                    {{ item.product_price | currency: "CAD" }}
+                    {{ product.product_price | currency: "CAD" }}
                 </p>
-                <availability [inStock]="availavility(item.product_availability)"></availability>
-                <button [routerLink]="['/apparel/', item.ProductID]" routerLinkActive="router-link-active" class="mt-3 apparel-btn">
+                <availability [inStock]="availavility(product.product_availability)"></availability>
+                <button [routerLink]="['/apparel/', product.ProductID]" routerLinkActive="router-link-active" class="mt-3 apparel-btn">
           See More
         </button>
             </div>

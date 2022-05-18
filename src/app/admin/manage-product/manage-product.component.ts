@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/services/products.service';
-import { Item } from '../../interfaces/product.interface';
 import { CommonService } from 'src/app/services/common.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./manage-product.component.scss']
 })
 export class ManageProductComponent implements OnInit {
-  products: Item[] = [];
+  products: any[] = [];
   product_name: string = '';
   product_desc: string = '';
   product_price: any = '';
@@ -22,7 +20,7 @@ export class ManageProductComponent implements OnInit {
   addproductStatus = false;
   errorMessage: any = '';
 
-  constructor(private ps: ProductsService, private cs: CommonService, private activerouter:ActivatedRoute) { }
+  constructor(private cs: CommonService, private activerouter:ActivatedRoute) { }
 
   availavility(data: any) {
     if (data > 0) return true;
@@ -46,9 +44,9 @@ export class ManageProductComponent implements OnInit {
   }
  
   ngOnInit(): void {
-    this.ps.getAllproductDataFromNodesercer().subscribe((productsDate) => {
-      this.products = productsDate;
-      console.log(productsDate);
+    this.cs.getAllproduct().subscribe((products) => {
+      this.products = products;
+      console.log(products);
     })
   }
 }

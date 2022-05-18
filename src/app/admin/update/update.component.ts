@@ -56,7 +56,7 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.param.snapshot.paramMap.get('id'));
     let id: any = this.param.snapshot.paramMap.get('id');
-    this.cs.getProductId(id).subscribe((productDetail) => {
+    this.cs.getproductByID(id).subscribe((productDetail) => {
       console.log(productDetail);
       this.product_name = productDetail.productData[0].product_name;
       this.product_desc = productDetail.productData[0].product_desc;

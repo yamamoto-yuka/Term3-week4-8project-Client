@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../interfaces/product.interface';
-import { ProductsService } from '../services/products.service';
+import { CommonService } from '../services/common.service';
+
+
 @Component({
   selector: 'apparel',
   templateUrl: './apparel.component.html',
   styleUrls: ['./apparel.component.scss'],
 })
 export class ApparelComponent implements OnInit {
-  items: Item[] = [];
-  constructor(private service: ProductsService) {}
+  products: any[] = [];
+  constructor(private service: CommonService) {}
 
   availavility(data: any) {
     if (data > 0) return true;
@@ -16,8 +17,8 @@ export class ApparelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAllproductDataFromNodesercer().subscribe((productData) => {
-      this.items = productData;
+    this.service.getAllproduct().subscribe((productData) => {
+      this.products = productData;
       console.log(productData)
     });
   }

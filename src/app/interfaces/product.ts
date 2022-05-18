@@ -1,4 +1,4 @@
-export interface Getproductid {
+export interface Product {
   productid: boolean;
   message: string;
   productData: [
@@ -10,7 +10,7 @@ export interface Getproductid {
       product_availability: number;
       product_image1: string;
       product_image2: string;
-      display: any;
+      display: number;
     }
   ]
 }
