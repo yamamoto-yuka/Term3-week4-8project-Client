@@ -15,14 +15,10 @@ export class ApparelComponent implements OnInit {
     else return false;
   }
 
-  changeBoolean(data: any) {
-    if (data === 1)  return true;
-    else  return false;
-  }
-
   ngOnInit(): void {
     this.service.getAllproductDataFromNodesercer().subscribe((productData) => {
       this.items = productData;
+      console.log(productData)
     });
   }
 }

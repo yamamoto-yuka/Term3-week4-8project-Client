@@ -21,8 +21,6 @@ export class ManageProductComponent implements OnInit {
   showMessage = 'none';
   addproductStatus = false;
   errorMessage: any = '';
-  display = false;
-
 
   constructor(private ps: ProductsService, private cs: CommonService, private activerouter:ActivatedRoute) { }
 
@@ -41,28 +39,16 @@ export class ManageProductComponent implements OnInit {
     })
   }
 
-  //   toggledisplay(index: number) {
-  //   this.cs.updateDisplay().subscribe((displayData) => {
-  //     console.log(displayData);
-  //   })
-  // }
+    toggledisplay(id:number) {
+    this.cs.updateDisplay(id).subscribe((displayData) => {
+      console.log(displayData);
+    })
+  }
  
   ngOnInit(): void {
     this.ps.getAllproductDataFromNodesercer().subscribe((productsDate) => {
       this.products = productsDate;
       console.log(productsDate);
-
-      for (let i = 0; i < productsDate.length; i++)
-      {
-        console.log(productsDate[i].display);
-        if (productsDate[i].display === 1) {
-          this.display = true;
-        } else {
-          this.display = false;
-        }
-        }
     })
-
   }
-
 }

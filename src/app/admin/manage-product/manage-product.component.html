@@ -111,7 +111,7 @@
                             <tr *ngFor="let product of products; let i = index">
                                 <td>
                                     <div class="form-check form-switch">
-                                        <input [(ngModel)]="display" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                        <input [(ngModel)]="product.display" (click)="toggledisplay(product.ProductID)" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                                     </div>
                                 </td>
                                 <td>

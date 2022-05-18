@@ -44,6 +44,14 @@ export class UpdateComponent implements OnInit {
       })
     }
   }
+
+  toggledisplay() {
+    let id: any = this.param.snapshot.paramMap.get('id');
+    this.cs.updateDisplay(id).subscribe((displayData) => {
+      console.log(displayData);
+      this.ngOnInit();
+    })
+  }
   
   ngOnInit(): void {
     console.log(this.param.snapshot.paramMap.get('id'));
@@ -56,15 +64,6 @@ export class UpdateComponent implements OnInit {
       this.product_image1 = productDetail.productData[0].product_image1;
       this.product_image2 = productDetail.productData[0].product_image2;
       this.product_availability = productDetail.productData[0].product_availability;
-
-      console.log(productDetail.productData[0].display);
-      if (productDetail.productData[0].display === 1) {
-        productDetail.productData[0].display = true;
-      } else {
-        productDetail.productData[0].display = false;
-      }
-      this.display = productDetail.productData[0].display;
-       console.log(productDetail.productData[0].display);
     })
   }
 
