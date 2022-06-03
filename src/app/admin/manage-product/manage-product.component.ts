@@ -19,8 +19,24 @@ export class ManageProductComponent implements OnInit {
   showMessage = 'none';
   addproductStatus = false;
   errorMessage: any = '';
+  imageformData: any;
 
-  constructor(private cs: CommonService, private activerouter:ActivatedRoute) { }
+  constructor(private cs: CommonService, private activerouter: ActivatedRoute) { }
+  
+  onChange(event: any) {
+    let file: File = event.target.files
+    console.log(file);
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log(formData);
+    this.imageformData = formData;
+  }
+
+  uploadImage() {
+    this.cs.uploadFile(this.imageformData).subscribe(response => {
+      console.log(response);
+    })
+  }
 
   availavility(data: any) {
     if (data > 0) return true;

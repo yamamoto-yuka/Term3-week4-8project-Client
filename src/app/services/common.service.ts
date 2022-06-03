@@ -20,6 +20,10 @@ export class CommonService {
   
   constructor(private http: HttpClient) { }
 
+  uploadFile(filedata: any) {
+    return this.http.post('http://localhost:4500/upload', filedata)
+  }
+
   getAllproduct() {
     return this.http.get<Product[]>(this.productURL);
   }

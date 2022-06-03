@@ -163,6 +163,11 @@
                 <label for="product_availability" class="form-label">Product Availability(quantity)</label>
                 <input [(ngModel)]="product_availability" type="number" class="form-control" id="product_availability">
             </div>
+            <div class="mb-3">
+                <label for="product_image1" class="form-label">Image1</label>
+                <input type="file" class="form-control" id="product_image1" (change)="onChange($event)" multiple name="image">
+                <button class="btn btn-primary" type="button" (click)="uploadImage()">Upload</button>
+            </div>
 
             <button (click)="addproduct()" class="btn btn-primary">Add</button>
             <div *ngIf="addproductStatus" [style.display]="showMessage" [class.success]="addproductStatus">Add new product successful!

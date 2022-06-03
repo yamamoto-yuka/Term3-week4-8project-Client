@@ -8,15 +8,17 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class SignupComponent implements OnInit {
   user_name: string = '';
-  password: string = '';
+  password1: string = '';
+  password2: string = '';
   showMessage = 'none';
   signupStatus = false;
   errorMessage: any = '';
   
 
   constructor(private service:CommonService) { }
-  signup() {
-    this.service.signupService(this.user_name, this.password).subscribe((signupData) => {
+  signup(username:any, password1:any, password2:any) {
+    console.log(username,password1, password2);
+    this.service.signupService(this.user_name, this.password1).subscribe((signupData) => {
       console.log(signupData)
       this.showMessage = 'block';
       this.signupStatus = signupData.signup;
