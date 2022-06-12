@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../interfaces/product';
 import { User } from '../interfaces/adminuser';
-import { Login } from '../interfaces/login';
 
 
 @Injectable({
@@ -37,12 +36,12 @@ export class CommonService {
     return this.http.post<{userData:User[], signup:boolean, message:string}>(this.signupURL, signupbody);
   }
 
-  loginService(user_name: string, password: string) {
+  loginService(username: string, password: string) {
     let loginbody = {
-      user_name: user_name,
+      username: username,
       password: password
     }
-    return this.http.post<Login>(this.loginURL, loginbody);
+    return this.http.post<{data:User[],login:boolean,message:string}>(this.loginURL, loginbody);
   } 
 
   addNewProduct(product_name: string, product_desc: string, product_price: number, product_image1: string, product_image2: string, product_availability:number) {

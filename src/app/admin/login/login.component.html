@@ -3,7 +3,7 @@
     <h2>Log In</h2>
     <div class="mb-3">
         <label for="username" class="form-label">User Name</label>
-        <input [(ngModel)]="user_name" type="text" class="form-control" id="username" placeholder="User name here">
+        <input [(ngModel)]="username" type="text" class="form-control" id="username" placeholder="User name here">
     </div>
     <div class="mb-3">
         <label for="password" class="form-label">Password</label>
@@ -18,5 +18,5 @@
         </div>
     </div>
     <button (click)="login()" class="btn btn-primary">LogIn</button> | <a routerLink="/signup">Sign up</a>
-    <div *ngIf="!loingStatus" [style.display]="showMessage" [class.error]="!loingStatus">Your login credentials are incorect. </div>
+    <div *ngIf="!loginStatus" [style.display]="showMessage" [class.error]="!loginStatus">Your login credentials are incorect. </div>
 </div>
