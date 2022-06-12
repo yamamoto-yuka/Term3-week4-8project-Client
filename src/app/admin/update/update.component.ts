@@ -13,7 +13,7 @@ export class UpdateComponent implements OnInit {
   product_price: any = '';
   product_image1: string = '';
   product_image2: string = '';
-  product_availability: any = '';
+  product_quantity: any = '';
   display:any = '';
   updateStatus = false;
   showMessage = 'none';
@@ -24,7 +24,7 @@ export class UpdateComponent implements OnInit {
   
   update() {
     let id: any = this.param.snapshot.paramMap.get('id');
-    this.cs.updateProduct(id, this.product_name, this.product_desc, this.product_price, this.product_image1, this.product_image2, this.product_availability, this.display).subscribe((updateConfirmation) => {
+    this.cs.updateProduct(id, this.product_name, this.product_desc, this.product_price, this.product_image1, this.product_image2, this.product_quantity).subscribe((updateConfirmation) => {
       console.log(updateConfirmation);
       this.updateStatus = updateConfirmation.update;
       this.showMessage = 'block';
@@ -38,9 +38,7 @@ export class UpdateComponent implements OnInit {
       let id: any = this.param.snapshot.paramMap.get('id');
       this.cs.deleteProduct(id).subscribe((response) => {
         console.log(response);
-        if (response.delete) {
-          this.router.navigate(['/admin']);
-        }
+        this.router.navigate(['/admin']);
       })
     }
   }
@@ -63,7 +61,7 @@ export class UpdateComponent implements OnInit {
       this.product_price = productDetail.productData[0].product_price;
       this.product_image1 = productDetail.productData[0].product_image1;
       this.product_image2 = productDetail.productData[0].product_image2;
-      this.product_availability = productDetail.productData[0].product_availability;
+      this.product_quantity = productDetail.productData[0].product_quantity;
     })
   }
 

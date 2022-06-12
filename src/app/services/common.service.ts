@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Signup } from '../interfaces/signup';
-import { Login } from '../interfaces/login';
-import { Newproduct } from '../interfaces/newproduct';
-import { Update } from '../interfaces/update';
-import { Deletedata } from '../interfaces/deletedata';
-import { Updatedisplay } from '../interfaces/updatedisplay';
 import { Product } from '../interfaces/product';
+import { User } from '../interfaces/adminuser';
+import { Login } from '../interfaces/login';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
+  private productURL = 'http://localhost:4500/product';
+  private toggleURL = 'http://localhost:4500/displayupdate';
   private signupURL = 'http://localhost:4500/signup';
   private loginURL = 'http://localhost:4500/login';
-  private productURL = 'http://localhost:4500/product';
-  private toggleURL = 'http://localhost:4500/toggle';
 
   
   constructor(private http: HttpClient) { }
@@ -29,15 +26,15 @@ export class CommonService {
   }
 
   getproductByID(id: number) {
-    return this.http.get<Product>(this.productURL+ '/' + id);
+    return this.http.get<{productid:boolean,message:string,productData:Product[]}>(this.productURL+ '/' + id);
   }
 
-  signupService(user_name: string, password: string) {
+  signupService(username: string, password: string) {
     let signupbody = {
-      user_name: user_name,
+      user_name: username,
       password: password
     }
-    return this.http.post<Signup>(this.signupURL, signupbody);
+    return this.http.post<{userData:User[], signup:boolean, message:string}>(this.signupURL, signupbody);
   }
 
   loginService(user_name: string, password: string) {
@@ -57,10 +54,10 @@ export class CommonService {
       product_image2: product_image2,
       product_availability: product_availability
     }
-    return this.http.post<Newproduct>(this.productURL, newproductbody);
+    return this.http.post<{newProduct:Product[],insert:boolean, message:string}>(this.productURL, newproductbody);
   }
 
-  updateProduct(ProductID: number, product_name: string, product_desc: string, product_price: number, product_image1: string, product_image2: string, product_availability: any, display:any) {
+  updateProduct(ProductID: number, product_name: string, product_desc: string, product_price: number, product_image1: string, product_image2: string, product_quantity: any) {
     let updatebody = {
       ProductID: ProductID,
       product_name:product_name,
@@ -68,21 +65,20 @@ export class CommonService {
       product_price:product_price,
       product_image1:product_image1,
       product_image2:product_image2,
-      product_availability: product_availability,
-      display: display
+      product_quantity: product_quantity
     }
-    return this.http.put<Update>(this.productURL, updatebody);
+    return this.http.put<{update:boolean, updatedData:Product[],message:string}>(this.productURL, updatebody);
   }
 
   updateDisplay(ProductID: number) {
     let updatedisplaybody = {
       ProductID: ProductID,
     }
-    return this.http.put<Updatedisplay>(this.toggleURL, updatedisplaybody)
+    return this.http.put< {displayData:Product[],display:boolean,message:string}>(this.toggleURL, updatedisplaybody)
   }
 
   deleteProduct(id: number) {
-    return this.http.delete<Deletedata>(this.productURL+ '/' +id)
+    return this.http.delete<{delStatus:boolean, message:string}>(this.productURL+ '/' +id)
   }
 
 }
