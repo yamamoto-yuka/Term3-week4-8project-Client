@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/services/common.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'manage-product',
   templateUrl: './manage-product.component.html',
-  styleUrls: ['./manage-product.component.scss']
+  styleUrls: ['./manage-product.component.scss'],
 })
 export class ManageProductComponent implements OnInit {
   products: any[] = [];
@@ -21,10 +20,13 @@ export class ManageProductComponent implements OnInit {
   errorMessage: any = '';
   imageformData: any;
 
-  constructor(private cs: CommonService, private activerouter: ActivatedRoute) { }
-  
+  constructor(
+    private cs: CommonService,
+    private activerouter: ActivatedRoute
+  ) {}
+
   onChange(event: any) {
-    let file: File = event.target.files
+    let file: File = event.target.files;
     console.log(file);
     const formData = new FormData();
     formData.append('file', file);
@@ -33,9 +35,9 @@ export class ManageProductComponent implements OnInit {
   }
 
   uploadImage() {
-    this.cs.uploadFile(this.imageformData).subscribe(response => {
+    this.cs.uploadFile(this.imageformData).subscribe((response) => {
       console.log(response);
-    })
+    });
   }
 
   availavility(data: any) {
@@ -44,25 +46,34 @@ export class ManageProductComponent implements OnInit {
   }
 
   addproduct() {
-    this.cs.addNewProduct(this.product_name, this.product_desc, this.product_price, this.product_image1, this.product_image2, this.product_availability).subscribe((newproductDate) => {   
-      console.log(newproductDate);
+    this.cs
+      .addNewProduct(
+        this.product_name,
+        this.product_desc,
+        this.product_price,
+        this.product_image1,
+        this.product_image2,
+        this.product_availability
+      )
+      .subscribe((newproductDate) => {
+        console.log(newproductDate);
         this.showMessage = 'block';
         this.addproductStatus = newproductDate.insert;
         this.errorMessage = newproductDate.message;
         this.ngOnInit();
-    })
+      });
   }
 
-    toggledisplay(id:number) {
+  toggledisplay(id: number) {
     this.cs.updateDisplay(id).subscribe((displayData) => {
       console.log(displayData);
-    })
+    });
   }
- 
+
   ngOnInit(): void {
     this.cs.getAllproduct().subscribe((products) => {
       this.products = products;
       console.log(products);
-    })
+    });
   }
 }

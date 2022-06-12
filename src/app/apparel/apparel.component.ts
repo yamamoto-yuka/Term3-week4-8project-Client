@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
 
-
 @Component({
   selector: 'apparel',
   templateUrl: './apparel.component.html',
@@ -19,7 +18,7 @@ export class ApparelComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAllproduct().subscribe((productData) => {
       this.products = productData;
-      console.log(productData)
+      console.log(productData);
     });
   }
 }
