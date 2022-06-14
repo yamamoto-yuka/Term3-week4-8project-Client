@@ -1,8 +1,21 @@
+
+a{
+  font-family:'Epilogue', sans-serif;;
+  font-size: 2rem;
+  color: #030a8c !important;
+}
+a:hover{
+  color: #fff !important;
+}
+header{
+  background-color: #a69b03;
+}
+
 .navbar {
   padding: 0 30px;
 }
 .heder__brand {
-  height: 80px;
+  height: 120px;
   padding: 0;
   z-index: 100;
 }
@@ -38,11 +51,9 @@
 }
 .header-ads {
   height: 20px;
-  background-color: #f2b705;
+
 }
-.header-ads.bottom {
-  background-color: #4d77ba;
-}
+
 .btn-outline-success {
   color: #4d77ba !important;
   border-color: #4d77ba !important;

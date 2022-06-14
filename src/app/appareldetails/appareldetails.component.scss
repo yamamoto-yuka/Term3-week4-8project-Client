@@ -3,7 +3,11 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #4d77ba;
+  color: #030a8c;
+}
+
+.container{
+  padding-bottom: 3rem;
 }
 
 .apparel-item {
@@ -25,12 +29,12 @@ a:hover {
   width: 30%;
   height: 50px;
   color: #fff;
-  background-color: #4d77ba;
+  background-color: #030a8c;
   border: none;
   border-radius: 10px;
 }
 .apparel-btn:hover {
-  background-color: #314b75;
+  background-color: #010669;
 }
 .instock {
   color: green;

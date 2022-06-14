@@ -32,7 +32,7 @@ export class CommonService {
 
   signupService(username: string, password: string) {
     let signupbody = {
-      user_name: username,
+      username: username,
       password: password,
     };
     return this.http.post<{
