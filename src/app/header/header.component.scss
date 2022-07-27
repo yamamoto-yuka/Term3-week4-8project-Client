@@ -4,6 +4,7 @@ nav {
   height: 10vh;
   width: 100%;
   position: relative;
+  border-bottom: 1px solid $black;
   z-index: 3;
   background-color: $white;
 }
@@ -127,7 +128,7 @@ nav {
 }
 
 .nav-links svg:hover{
-  fill:$blue;
+  fill:$orange;
 }
 
 // active class

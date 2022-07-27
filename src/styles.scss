@@ -3,6 +3,13 @@
 $white:#F2F2F2;
 $black:#2F2E2E;
 $blue:#17488B;
+$orange:#F66419;
+
+@mixin flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 * {
@@ -12,11 +19,19 @@ $blue:#17488B;
     font-family:  Helvetica, sans-serif;
 }
 
+
 body{
   background-color: $white;
 }
 
-.wrap {
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+.wrapper {
     height: 100vh;
 }
 
