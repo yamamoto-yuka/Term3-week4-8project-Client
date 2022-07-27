@@ -6,8 +6,12 @@
   align-items: center;
 }
 
+.carousel {
+  border-bottom: 1px solid $black;
+}
+
 .carousel-item {
-  height: 80vh;
+  height: 90vh;
   width: 100%;
 }
 .carousel-item-box {
@@ -47,7 +51,7 @@
 }
 .img-box {
   height: 50vh;
-  width:80%;
+  width: 80%;
   padding: 3rem;
   img {
     height: 100%;
@@ -55,6 +59,71 @@
     object-fit: contain;
   }
 }
+
+.category {
+  min-height: 60vh;
+  flex-direction: column;
+}
+
+.category-items {
+  cursor: pointer;
+  padding: 2.5rem  0;
+  transition: color 0.3s ease-in-out;
+  .category-item {
+    height: 300px;
+    width: 300px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1rem;
+    background-color: $black;
+    h3 {
+      font-size: 3rem;
+      letter-spacing: 1.2px;
+      font-family: "JetBrains Mono", monospace, sans-serif;
+      font-weight: bold;
+      color: $white;
+      transition: color 0.3s ease-in-out;
+      svg {
+        height: 30px;
+        width: 30px;
+        fill: $white;
+        transition: fill 0.3s ease-in-out;
+      }
+    }
+    h3:hover,
+    h3 svg:hover {
+      color: $orange;
+      fill: $orange;
+    }
+  }
+}
+
+.category-items:hover {
+  .category-item {
+    h3 {
+      color: $black;
+      svg {
+        fill: $black;
+      }
+    }
+  }
+}
+
+.category-items:nth-child(1) :hover {
+  background-color: $orange;
+}
+.category-items:nth-child(2) :hover {
+  background-color: $blue;
+}
+
+.category-items:nth-child(3) :hover {
+  background-color: $yellow;
+}
+
+.category-items:nth-child(4) :hover {
+  background-color: $green;
+}
+
 
 @media screen and (min-width: 768px) {
   .cta {
@@ -68,7 +137,14 @@
       width: 130px;
     }
   }
-
+  
+  .category{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .category-items {
+    padding: 2rem 1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {

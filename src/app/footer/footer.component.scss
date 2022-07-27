@@ -38,11 +38,15 @@
       position: relative;
       display: inline-block;
       input {
-        padding: 8px 90px 8px 1px;
+        padding: 8px 90px 8px 2px;
         border: none;
       }
       input::placeholder {
         font-size: 0.8rem;
+      }
+      input:focus{
+        outline: none !important;
+        border: 1px solid $orange;
       }
       .submitBtn {
         height: 13px;
