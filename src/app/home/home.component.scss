@@ -6,10 +6,6 @@
   align-items: center;
 }
 
-.carousel {
-  border-bottom: 1px solid $black;
-}
-
 .carousel-item {
   height: 90vh;
   width: 100%;
@@ -43,7 +39,7 @@
     color: $white;
     background-color: $black;
     transition: all 0.3s ease-in-out;
-    svg{
+    svg {
       height: 18px;
       width: 18px;
       fill: $white;
@@ -216,10 +212,9 @@
     flex-wrap: wrap;
   }
 
-  .newitem{
+  .newitem {
     margin: 2rem 1rem;
   }
-  
 }
 
 @media screen and (min-width: 1024px) {
@@ -249,7 +244,7 @@
 
   .newarrivals {
     padding: 5rem 0 10rem 0;
-    h2{
+    h2 {
       font-size: 3.5rem;
     }
   }

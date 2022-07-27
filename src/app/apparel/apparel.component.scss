@@ -1,5 +1,7 @@
 h2,h3{
-  font-family: "Epilogue", sans-serif;
+  letter-spacing: 1.2px;
+  font-family: 'JetBrains Mono', monospace,sans-serif;
+  font-weight: bold;
 }
 
 main{
@@ -9,12 +11,19 @@ main{
 
 .apparel-heading {
   font-size: 3rem;
-  font-weight: bold;
+}
+
+.apparel-items {
+  padding: 2rem 3rem;
+}
+
+.apparel-item-box{
+  padding: 3rem 0;
 }
 
 .apparel-item {
-  position: relative;
   height: 250px;
+  position: relative;
   overflow: hidden;
   cursor: pointer;
 }
@@ -70,4 +79,11 @@ main{
 
 .nonedisplay {
   display: none;
+}
+
+
+@media screen and (min-width:1024px) {
+  .apparel-item-box{
+    padding: 3rem;
+  }
 }

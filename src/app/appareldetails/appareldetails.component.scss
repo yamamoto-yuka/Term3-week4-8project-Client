@@ -1,25 +1,37 @@
+@import '../../styles.scss';
+
+
 a {
   color: #000;
   text-decoration: none;
 }
 a:hover {
-  color: #030a8c;
+  color: $orange;
 }
 
 .container{
   padding-bottom: 3rem;
 }
 
+.apparel-items{
+  padding: 1rem 3rem;
+}
+
 .apparel-item {
-  height: 500px;
+  height: 400px;
+  padding: 2rem;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }
-.apparel-item img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
+
 .apparel-item-title {
-  font-size: 24px;
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+  font-family: 'JetBrains Mono', monospace,sans-serif;
+  font-weight: bold;
 }
 .apparel-item-price {
   font-weight: bold;
@@ -29,12 +41,12 @@ a:hover {
   width: 30%;
   height: 50px;
   color: #fff;
-  background-color: #030a8c;
+  background-color: $black;
   border: none;
-  border-radius: 10px;
+  transition: background-color .3s ease-in-out;
 }
 .apparel-btn:hover {
-  background-color: #010669;
+  background-color: $orange;
 }
 .instock {
   color: green;
