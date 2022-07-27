@@ -1,37 +1,98 @@
-.header-heroimg {
-  height: 80vh;
+@import "../../styles.scss";
+
+.wrap {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 0 2rem;
-  background-color: #a69b03;
 }
 
-.header-heroimg h1 {
-  font-family:'Epilogue', sans-serif;;
-  font-size: 6rem;
-  font-weight: bold;
-  color: #030a8c;
+.carousel-item {
+  height: 80vh;
+  width: 100%;
+}
+.carousel-item-box {
+  height: 100%;
+  flex-direction: column;
+}
+.cta {
+  height: 20vh;
+  width: 100%;
+  padding: 3rem 1rem;
+  justify-content: space-around;
+  .cta-headline {
+    width: 40%;
+    h1 {
+      margin-bottom: 1rem;
+      letter-spacing: 1.2px;
+      font-family: "JetBrains Mono", monospace, sans-serif;
+      font-weight: bold;
+    }
+  }
+  .ctaBtn {
+    height: 100px;
+    width: 100px;
+    border: 1px solid $black;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-family: "JetBrains Mono", monospace, sans-serif;
+    font-weight: bold;
+    color: $white;
+    background-color: $black;
+    transition: all 0.3s ease-in-out;
+  }
+  .ctaBtn:hover {
+    background-color: $orange;
+    border: 1px solid $orange;
+  }
+}
+.img-box {
+  height: 50vh;
+  width:80%;
+  padding: 3rem;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }
 
-button{
-  height: 150px;
-  width: 150px;
-  border: 1px solid #030a8c;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  color: #030a8c;
-  background-color: #a69b03;
+@media screen and (min-width: 768px) {
+  .cta {
+    .cta-headline {
+      h1 {
+        font-size: 2.6rem;
+      }
+    }
+    .ctaBtn {
+      height: 130px;
+      width: 130px;
+    }
+  }
+
 }
 
-button:hover{
-  color: #fff;
-  background-color: #030a8c;
-}
+@media screen and (min-width: 1024px) {
+  .carousel-item-box {
+    flex-direction: row;
+  }
+  .cta {
+    height: 100%;
+    width: 50%;
+    .cta-headline {
+      h1 {
+        font-size: 2.7rem;
+      }
+    }
+    .ctaBtn {
+      height: 150px;
+      width: 150px;
+      font-size: 1rem;
+    }
+  }
 
-@media (max-width: 756px) {
-  .header-heroimg {
-    flex-direction: column;
-    padding-top: 2rem;
+  .img-box {
+    height: 100%;
+    width: 50%;
+    padding: 5rem;
   }
 }

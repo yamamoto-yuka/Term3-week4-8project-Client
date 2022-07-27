@@ -1,6 +1,73 @@
 <app-header></app-header>
-<div class="header-heroimg">
-  <h1>Explore<br>your<br>music</h1>
-  <button routerLink="/apparel">View Products</button>
-</div>
+<main>
+  <div class="hero">
+    <div id="herocarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <div class="carousel-item-box wrap">
+            <div class="cta wrap">
+              <div class="cta-headline">
+                <h1>Juurou × TRUNK RECORDS</h1>
+                <p>
+                  Trunk Records
+                  <br />
+                  Original Goods
+                </p>
+              </div>
+              <button class="ctaBtn" routerLink="/apparel">Explore</button>
+            </div>
+            <div class="img-box">
+              <img
+                src="../../assets/hero_item2.png"
+                class="d-block w-100"
+                alt="Mangatjay Romāns color vinyl"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item" data-bs-interval="10000">
+          <div class="carousel-item-box wrap">
+            <div class="cta wrap">
+              <div class="cta-headline">
+                <h1>Mangatjay Romāns</h1>
+                <p>
+                  Trunk Records<br />
+                  Exclusice clear Vinyl
+                </p>
+              </div>
+              <button class="ctaBtn" routerLink="/">Pre Order</button>
+            </div>
+            <div class="img-box">
+              <img
+                src="../../assets/hero_item1.png"
+                class="d-block w-100"
+                alt="Mangatjay Romāns color vinyl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#herocarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#herocarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</main>
 <app-footer></app-footer>
